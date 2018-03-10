@@ -88,7 +88,7 @@ E2E_ARGS=(
   --pilot_hub="${HUB}"
   --pilot_tag="${TAG}"
   --proxy_hub="${HUB}"
-  --proxy_tag="${PROXY_RELEASE_TAG:-${TAG}}"
+  --proxy_tag="${PROXY_SKEW_TAG:-${TAG}}"
   --test_logs_path="${ARTIFACTS_DIR}"
 )
 

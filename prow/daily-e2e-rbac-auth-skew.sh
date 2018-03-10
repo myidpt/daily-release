@@ -34,6 +34,6 @@ ROOT=$(dirname $WD)
 source ${ROOT}/prow/lib.sh
 
 for p in ${PROXY_SKEW_TARGETS[@]}; do
-	export PROXY_RELEASE_TAG="${p}"
+	export PROXY_SKEW_TAG="${p}"
 	${ROOT}/prow/e2e-suite.sh --auth_enable
 done
