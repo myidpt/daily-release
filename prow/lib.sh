@@ -15,5 +15,5 @@
 #   limitations under the License.
 
 export PROXY_SKEW_TARGETS=(
-	0.5.1
+	0.7.0-pre20180306-09-15-16
 )
