@@ -77,6 +77,10 @@ cp -R ${DAILY_BUILD}/install/* install/
 get_resource "${RESOURCE_TYPE}" "${OWNER}" "${INFO_PATH}" "${FILE_LOG}"
 setup_cluster
 
+curl -L https://git.io/getLatestIstio | sh -
+
+ISTIOCTL_PATH=`pwd`/istio-0.6.0/bin/istioctl
+
 echo 'Running E2E Tests'
 # The --default_proxy flag overwrites both --proxy_hub  and --proxy_tag
 
@@ -84,7 +88,7 @@ E2E_ARGS=(
   --ca_hub="${HUB}"
   --ca_tag="${TAG}"
   --deb_url="${DEB_URL}"
-  --istioctl "${GOPATH}/src/istio.io/istio/istio-${PROXY_SKEW_TAG:-${TAG}}/bin/istioctl"
+  --istioctl $ISTIOCTL_PATH
   --mason_info="${INFO_PATH}"
   --mixer_hub="${HUB}"
   --mixer_tag="${TAG}"
